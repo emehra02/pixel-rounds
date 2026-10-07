@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pixel Rounds</title>
+  <meta name="description" content="One Step 1 case a day. Diagnose it in as few clues as you can, level up your pixel doctor, and collect gear.">
+  <meta name="theme-color" content="#13112a">
+
+  <!-- Link previews (iMessage, Discord, Slack, X, Facebook).
+       After your first deploy, replace /og.png with the full URL, e.g. https://pixelrounds.app/og.png -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pixel Rounds">
+  <meta property="og:title" content="Pixel Rounds: a daily Step 1 case">
+  <meta property="og:description" content="Diagnose today's case in as few clues as you can. Level up your pixel doctor and collect gear.">
+  <meta property="og:image" content="/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Pixel Rounds logo with a pixel-art doctor and a heartbeat line">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pixel Rounds: a daily Step 1 case">
+  <meta name="twitter:description" content="Diagnose today's case in as few clues as you can. Level up your pixel doctor and collect gear.">
+  <meta name="twitter:image" content="/og.png">
+
+  <!-- Installable app -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pixel Rounds">
+
+  <link rel="preload" href="/fonts/press-start-2p.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/vt323.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Vercel Web Analytics: turn it on in your Vercel project under Analytics. -->
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <header class="hud" id="hud"></header>
+
+  <main class="app">
+    <section id="view-rounds" class="view" aria-label="Today's case"></section>
+    <section id="view-stats" class="view" aria-label="Stats" hidden></section>
+    <section id="view-archive" class="view" aria-label="Past cases" hidden></section>
+    <section id="view-locker" class="view" aria-label="Locker" hidden></section>
+    <section id="view-closet" class="view" aria-label="Supply Closet" hidden></section>
+    <section id="view-training" class="view" aria-label="Training" hidden></section>
+    <!-- Ad placement: unhide and drop the ad network snippet here at launch. -->
+    <aside id="ad-slot" class="ad-slot" aria-label="Advertisement" hidden></aside>
+  </main>
+
+  <nav class="tabs" id="tabs" aria-label="Main">
+    <button class="tab" data-view="rounds" aria-current="page">Rounds</button>
+    <button class="tab" data-view="stats">Stats</button>
+    <button class="tab" data-view="locker">Locker</button>
+    <button class="tab" data-view="closet">Closet</button>
+    <button class="tab" data-view="training">Train</button>
+  </nav>
+
+  <div class="opening" id="opening" hidden></div>
+
+  <div class="modal-wrap" id="modal" hidden>
+    <div class="modal" id="modal-card" role="dialog" aria-modal="true"></div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/cases.js"></script>
+  <script src="/js/cosmetics.js"></script>
+  <script src="/js/avatar.js"></script>
+  <script src="/js/state.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
